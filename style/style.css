@@ -1,0 +1,13 @@
+
+.container {
+    margin: 5vw;
+    display: flex;
+    justify-content: center;
+}
+
+#test-console {
+    color: white;
+    background-color: black;
+    width: 50vw;
+    min-height: 20vh;
+}
