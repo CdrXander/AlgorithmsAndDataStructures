@@ -6,11 +6,68 @@ export default class sorter {
     }
 
     static mergeSort(toSort) {
-        return null
+    
+        if(toSort.length <= 1) {
+            return toSort;
+        }
+    
+        let center = Math.floor(toSort.length / 2)
+    
+        let leftArr = this.mergeSort(toSort.slice(0, center));
+        let rightArr = this.mergeSort(toSort.slice(center))
+        
+        return this.merge(leftArr, rightArr);
+    }
+    
+    static merge(leftArr, rightArr) {
+        let i = 0;
+        let j = 0;
+        let result = [];
+    
+        while(i < leftArr.length && j < rightArr.length ) {
+            if(leftArr[i] <= rightArr[j]) {
+                result.push(leftArr[i])
+                i++
+            }
+            else {
+                result.push(rightArr[j])
+                j++
+            }
+        }
+    
+        while(i < leftArr.length) {
+            result.push(leftArr[i])
+            i++
+        }
+    
+        while(j < rightArr.length) {
+            result.push(rightArr[j])
+            j++
+        }
+        return result
     }
 
     static insertionSort(toSort) {
-        return null
+        
+        
+        //loop
+        for(let i = 0; i < toSort.length; i++) {
+            //get item at sortedLimit
+            let item = toSort[i];
+            //Loop
+            for(let j = 0 ; j < i; j++) {
+                if(item <= toSort[j]) {
+                   
+                    for(let k = i-1; k >= j; k--) {
+                        toSort[k+1] = toSort[k]
+                    }
+                    toSort[j] = item;
+                    break;
+                }
+            }
+        }
+
+        return toSort;
     }
 
     static quickSort(toSort) {

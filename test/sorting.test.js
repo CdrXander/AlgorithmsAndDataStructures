@@ -41,10 +41,6 @@ describe("Selection Sort", () => {
     test('should return a single item array', () => {
         expect(sorter.selectionSort(inputSingle)).toEqual(answerSingle);
     })
-
-    // test('should sort an array of 10,000 items', () => {
-    //     expect(sorter.selectionSort(inputLarge)).toEqual(answerLarge)
-    // })
 })
 
 describe("Bubble Sort", () => {
@@ -63,11 +59,58 @@ describe("Bubble Sort", () => {
     test('should return a single item array', () => {
         expect(sorter.bubbleSort(inputSingle)).toEqual(answerSingle);
     })
-
-    // test('should sort an array of 10,000 items', () => {
-    //     expect(sorter.bubbleSort(inputLarge)).toEqual(answerLarge)
-    // })
 })
+
+describe("Merge Sort", () => {
+    test('should sort basic input', () => {
+        expect(sorter.mergeSort(input1)).toEqual(answer1);
+    });
+
+    test('should sort mid sized input', () => {
+        expect(sorter.mergeSort(input2)).toEqual(answer2);
+    })
+
+    test('should sort a reversed input', () => {
+        expect(sorter.mergeSort(inputReversed)).toEqual(answerReversed);
+    })
+
+    test('should return a single item array', () => {
+        expect(sorter.mergeSort(inputSingle)).toEqual(answerSingle);
+    })
+})
+
+describe("Insertion Sort", () => {
+    test('should sort basic input', () => {
+        expect(sorter.insertionSort(input1)).toEqual(answer1);
+    });
+
+    test('should sort mid sized input', () => {
+        expect(sorter.insertionSort(input2)).toEqual(answer2);
+    })
+
+    test('should sort a reversed input', () => {
+        expect(sorter.insertionSort(inputReversed)).toEqual(answerReversed);
+    })
+
+    test('should return a single item array', () => {
+        expect(sorter.insertionSort(inputSingle)).toEqual(answerSingle);
+    })
+})
+
+/* 
+describe("Large Input Sorting", () => {
+    test('Selection Sort should sort an array of 10,000 items', () => {
+        expect(sorter.selectionSort(inputLarge)).toEqual(answerLarge)
+    })
+
+    test('Bubble Sort should sort an array of 10,000 items', () => {
+        expect(sorter.bubbleSort(inputLarge)).toEqual(answerLarge)
+    })
+
+    test('Merge Sort should sort an array of 10,000 items', () => {
+        expect(sorter.mergeSort(inputLarge)).toEqual(answerLarge)
+    })
+})  */
 
 
 /* describe("Sorting algorithms", () => {

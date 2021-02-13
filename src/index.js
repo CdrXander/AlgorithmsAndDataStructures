@@ -8,4 +8,4 @@ function testConn() {
 
 testConn();
 
-sorter.mergeSort([1, 2, 3]);
+sorter.insertionSort([25, 62, 15, 58, 64, 12, 14, 99, 1, 42]);
